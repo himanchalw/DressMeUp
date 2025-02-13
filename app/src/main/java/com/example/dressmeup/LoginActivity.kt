@@ -21,13 +21,12 @@ class LoginActivity:AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imgNextButton.setOnClickListener{
-            Log.i("button","Button was pressed")
             val idInput:String=binding.edtLogin.text.toString()
             val passwordInput=binding.edtPassword.text.toString()
             if(idInput.isNotBlank()and passwordInput.isNotBlank()){
 
                 if(idInput==loginId && passwordInput==password){
-                    startActivity(Intent(this, SearchActivity::class.java))
+                    startActivity(Intent(this, NewSearchActivity::class.java))
                 }else{
                     Toast.makeText(this, "Wrong credentials entered", Toast.LENGTH_SHORT).show()
                 }
@@ -36,7 +35,7 @@ class LoginActivity:AppCompatActivity() {
 
     }
     override fun onBackPressed() {
-//        super.onBackPressed()
+        super.onBackPressed()
         Toast.makeText(this, "Back button is disabled", Toast.LENGTH_SHORT).show()
     }
 }

@@ -24,7 +24,7 @@ class SplashActivity:AppCompatActivity() {
         }, splashTime, TimeUnit.MILLISECONDS)
     }
     override fun onBackPressed() {
-//        super.onBackPressed()
+        super.onBackPressed()
         Toast.makeText(this, "Back button is disabled", Toast.LENGTH_SHORT).show()
     }
 }

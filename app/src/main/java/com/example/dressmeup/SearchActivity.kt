@@ -19,7 +19,7 @@ class SearchActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= SearchPageBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        setContentView(binding.root)
 
         binding.btnMic.setOnClickListener{
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
