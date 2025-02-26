@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.dressmeup.ImageItem
 import com.example.dressmeup.R
+import com.example.dressmeup.GetImages
+import com.example.dressmeup.Post
 
 class ImageAdapter(private val imageList: List<ImageItem>) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
@@ -22,6 +24,7 @@ class ImageAdapter(private val imageList: List<ImageItem>) :
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val imageItem = imageList[position]
+
         Glide.with(holder.itemView.context)
             .load(imageItem.imageUrl)
             .into(holder.imageView)

@@ -6,14 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.*
 
-data class Post(
-    val id: String,
-    val altDescription:String,
-    val urls: Urls
-)
-data class Urls(
-    val regular: String
-)
+
 
 class GetImages {
     private val client = OkHttpClient()

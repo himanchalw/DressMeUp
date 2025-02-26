@@ -1,5 +1,6 @@
 package com.example.dressmeup
 
+import ImageAdapter
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -14,7 +15,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.dressmeup.databinding.SearchPageBinding
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 class NewSearchActivity:AppCompatActivity() {
@@ -91,6 +96,15 @@ class NewSearchActivity:AppCompatActivity() {
 
             }
         })
+         // 🔹 Set layout manager
+        val btnSearch=binding.btnSearch
+        btnSearch.setOnClickListener{
+            if(binding.edtSearch.text.toString().isNotBlank()) {
+                startActivity(Intent(this, SearchResultActivity::class.java))
+            }else{
+                binding.edtStatus.text="Please enter text in search box😊"
+            }
+        }
     }
     private fun startListening(){
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
