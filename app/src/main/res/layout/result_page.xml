@@ -11,9 +11,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:clipToPadding="false"
-        android:paddingHorizontal="16dp"/>
+        android:paddingHorizontal="16dp"
+        android:scrollbars="horizontal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

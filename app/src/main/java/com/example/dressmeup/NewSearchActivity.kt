@@ -68,6 +68,7 @@ class NewSearchActivity:AppCompatActivity() {
 
             override fun onEndOfSpeech() {
                 statusText.text = "Speech Completed"
+
             }
 
             override fun onError(error: Int) {
