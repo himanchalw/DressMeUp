@@ -9,7 +9,7 @@ import com.example.dressmeup.R
 import com.example.dressmeup.GetImages
 import com.example.dressmeup.Post
 
-class ImageAdapter(private val imageList: List<ImageItem>) :
+class ImageAdapter(private val imageList: MutableList<ImageItem>) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,6 +29,11 @@ class ImageAdapter(private val imageList: List<ImageItem>) :
             .load(imageItem.imageUrl)
             .into(holder.imageView)
     }
-
+    // 🔹 Add a function to update the data dynamically
+    fun updateData(newItems: List<ImageItem>) {
+        imageList.clear()
+        imageList.addAll(newItems)
+        notifyDataSetChanged()
+    }
     override fun getItemCount(): Int = imageList.size
 }

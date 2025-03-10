@@ -16,15 +16,20 @@ class SearchResultActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ResultPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView) // 🔹 Get RecyclerView from XML
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val snapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(recyclerView)
+
+        val adapter = ImageAdapter(mutableListOf())
+        recyclerView.adapter = adapter
+
         lifecycleScope.launch {
             val posts = GetImages().fetchData() // 🔹 Fetch data from API
             if (posts != null) {
                 val imageItems = posts.map { post -> ImageItem(post.urls.regular) } // 🔹 Convert Post to ImageItem
-                recyclerView.adapter = ImageAdapter(imageItems) // 🔹 Attach adapter
+                adapter.updateData(imageItems)
             }
         }
     }

@@ -9,6 +9,7 @@ import android.os.PersistableBundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -36,6 +37,7 @@ class NewSearchActivity:AppCompatActivity() {
         statusText=binding.edtStatus
         val btnStartSpeech=binding.btnMic
         btnStartSpeech.setOnClickListener{
+            Log.d("NewSearchActivity", "Button clicked")
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
                 == PackageManager.PERMISSION_GRANTED) {
                 // Permission already granted
@@ -61,6 +63,8 @@ class NewSearchActivity:AppCompatActivity() {
             override fun onRmsChanged(rmsdB: Float) {
 
             }
+
+
 
             override fun onBufferReceived(buffer: ByteArray?) {
 
