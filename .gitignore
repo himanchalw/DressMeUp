@@ -1,15 +1,48 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle files
+.gradle/
 local.properties
+**/gradlew
+**/gradlew.bat
+**/gradle-wrapper.jar
+**/gradle-wrapper.properties
+
+# Build outputs
+/build/
+app/build/
+out/
+
+# Android Studio and IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Dependency caches
+.m2/
+.bundle/
+node_modules/
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Generated assets
+captures/
+gen/
+
+# Keystore files (if any)
+*.jks
+*.keystore
+
+# Python and Jupyter Notebook (if used)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
