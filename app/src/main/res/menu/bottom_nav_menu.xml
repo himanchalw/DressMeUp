@@ -2,15 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/profile"
-        android:title="Profile"
+        android:fontFamily="@font/montserrat_regular"
+        android:id="@+id/wishlist"
+        android:title="Wishlist"
         android:icon="@drawable/wishlist_icon"/>
     <item
-        android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/expand_icon"/>
+        android:fontFamily="@font/montserrat_regular"
+        android:id="@+id/expand_view"
+        android:title="Choose look"
+        android:icon="@drawable/cart_icon"/>
     <item
+        android:fontFamily="@font/montserrat_regular"
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="Refresh"
         android:icon="@drawable/refresh_icon"/>
 </menu>
