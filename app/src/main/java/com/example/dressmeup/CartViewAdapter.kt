@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-class CartViewAdapter(private val cartList: List<CartItem>): RecyclerView.Adapter<CartViewAdapter.CartViewHolder>() {
+class CartViewAdapter(private val cartList: MutableList<CartItem>): RecyclerView.Adapter<CartViewAdapter.CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val inflater: LayoutInflater =LayoutInflater.from(parent.context)

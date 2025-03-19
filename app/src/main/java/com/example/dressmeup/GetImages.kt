@@ -10,11 +10,12 @@ import okhttp3.*
 
 class GetImages {
     private val client = OkHttpClient()
-    private val url = "https://api.unsplash.com/photos/random?client_id=IANVB9vk2uncx9k9LyFBSFy_lsUo4NL3caMY7MFRZzQ&count=3"
+    private var url = "https://api.unsplash.com/photos/random?client_id=IANVB9vk2uncx9k9LyFBSFy_lsUo4NL3caMY7MFRZzQ&count="
 
-    suspend fun fetchData(): List<Post>? {
+    suspend fun fetchData(imgNum:Int): List<Post>? {
         return withContext(Dispatchers.IO) {
             try {
+                url+=imgNum.toString()
                 val request = Request.Builder().url(url).get().build()
                 val response = client.newCall(request).execute()
 
@@ -29,5 +30,8 @@ class GetImages {
                 return@withContext null
             }
         }
+    }
+    fun getUri():String{
+        return url
     }
 }

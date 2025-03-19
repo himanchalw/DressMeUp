@@ -4,5 +4,5 @@ data class CartItem(
     val id: Int,
     val itemName: String,
     val itemPrice: Double,
-    val imageUrl: Int
+    val imageUrl: String
 )
