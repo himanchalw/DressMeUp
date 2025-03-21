@@ -1,3 +1,7 @@
 package com.example.dressmeup
 
-data class ImageItem(val imageUrl: String)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class ImageItem(var imageUrl: String) : Parcelable

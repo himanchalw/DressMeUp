@@ -17,7 +17,7 @@ class CartViewFragment: BottomSheetDialogFragment() {
     private lateinit var cartAdapter: CartViewAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var cartItems: MutableList<CartItem>
-
+    private lateinit var imageItems: ArrayList<ImageItem>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,12 +31,21 @@ class CartViewFragment: BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.rvCartList)
+        val imageItems: ArrayList<ImageItem>? = arguments?.getParcelable("cart_items")
+        // ✅ Get Data from Arguments
+        arguments?.let {
+            val items = it.getParcelableArrayList<CartItem>("cart_items")
+            if (items != null) {
+                cartItems.addAll(items)
+            }
+        }
 
         // Initialize RecyclerView
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
+        loadCartItems()
         cartAdapter = CartViewAdapter(cartItems) // Ensure you have a RecyclerView Adapter named CartAdapter
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
@@ -44,7 +53,6 @@ class CartViewFragment: BottomSheetDialogFragment() {
         }
 
         // Load data into the adapter if needed
-        loadCartItems()
     }
 
     private fun loadCartItems() {
@@ -60,7 +68,25 @@ class CartViewFragment: BottomSheetDialogFragment() {
             CartItem(9, "Chain Lubricant", 350.00, "https://example.com/images/chain_lube.jpg"),
             CartItem(10, "LED Fog Lights", 2999.99, "https://example.com/images/fog_lights.jpg")
         ) // Replace with actual data
-        cartAdapter.submitList(cartItems) // Use DiffUtil or notifyDataSetChanged if needed
+
+        imageItems.let { urls ->
+            cartItems.forEachIndexed { index, cartItem ->
+                if (index < urls.size) {
+                    cartItem.imageUrl = urls[index].imageUrl
+                }
+            }
+        }
+    }
+    companion object {
+        // ✅ Factory Method to Create a Fragment with Arguments
+        fun newInstance(cartItems: List<CartItem>): CartViewFragment {
+            val fragment = CartViewFragment()
+            val bundle = Bundle().apply {
+                putParcelableArrayList("cart_items", ArrayList(cartItems))
+            }
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 
 }

@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 
 class CartViewAdapter(private val cartList: MutableList<CartItem>): RecyclerView.Adapter<CartViewAdapter.CartViewHolder>() {
 
@@ -27,8 +28,11 @@ class CartViewAdapter(private val cartList: MutableList<CartItem>): RecyclerView
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.itemName.text=cartList[position].itemName
-        holder.itemPrice.text= cartList[position].itemPrice.toString()
-        holder.itemImage.setImageResource(cartList[position].imageUrl)
+        val cartItem = cartList[position]
+        holder.itemName.text = cartItem.itemName
+        holder.itemPrice.text = cartItem.itemPrice.toString()
+        Glide.with(holder.itemView.context)
+            .load(cartItem.imageUrl)  // Load image from URL
+            .into(holder.itemImage) // Set image into ImageView
     }
 }
