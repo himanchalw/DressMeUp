@@ -33,35 +33,14 @@ class SearchResultActivity:AppCompatActivity() {
                 adapter.updateData(imageItems)
             }
         }
-        val bottomExpandButton=bottomNavigationView.menu.findItem(R.id.expand_view)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.expand_view -> {
                     // Handle "Choose Look" click
                     val bottomSheetFragment = CartViewFragment()
                     bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-                    lifecycleScope.launch {
-                        val items = GetImages().fetchData(10)
-                        val temp = items?.map { post -> ImageItem(post.urls.regular) } // 🔹 Convert Post to ImageItem
-//                if (temp != null) {
-//                    val bundle = Bundle()
-//
-//                    bundle.putParcelableArrayList("cart_items", ArrayList(temp)) // 🔹 Convert List to ArrayList
-//
-//                    bottomSheetFragment.arguments = bundle
-//                    supportFragmentManager.beginTransaction()
-//                        .replace(R.id.fragment_container_view, CartViewFragment()) // Replaces any existing fragment
-//                        .addToBackStack(null) // Allows back navigation
-//                        .commit()
-//                    bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-//                }
-                        if (temp != null) {
-                            val bundle = Bundle()
-                            bundle.putParcelableArrayList("cart_items", ArrayList(temp))
-                            bottomSheetFragment.arguments = bundle
-                            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-                        }
-                    }
+
+
                     true
                 }
                 R.id.wishlist -> {

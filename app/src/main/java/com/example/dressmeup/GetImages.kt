@@ -12,7 +12,7 @@ class GetImages {
     private val client = OkHttpClient()
     private var url = "https://api.unsplash.com/photos/random?client_id=IANVB9vk2uncx9k9LyFBSFy_lsUo4NL3caMY7MFRZzQ&count="
 
-    suspend fun fetchData(imgNum:Int): List<Post>? {
+    suspend fun fetchData(imgNum:Int): MutableList<Post>? {
         return withContext(Dispatchers.IO) {
             try {
                 url+=imgNum.toString()
