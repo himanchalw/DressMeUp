@@ -50,7 +50,7 @@ class CartViewFragment: BottomSheetDialogFragment() {
         })
 
         // ✅ Fetch images only if not already fetched
-        cartViewModel.fetchImages()ukhk
+        cartViewModel.fetchImages()
 
         // Initialize RecyclerView
         setupRecyclerView()

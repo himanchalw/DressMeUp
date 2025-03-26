@@ -29,7 +29,7 @@ class SearchResultActivity:AppCompatActivity() {
         lifecycleScope.launch {
             val posts = GetImages().fetchData(3) // 🔹 Fetch data from API
             posts?.let { safePosts ->  // 🔹 Use 'let' to ensure non-null value
-                val imageItems = safePosts.take(3).map { post -> ImageItem(post.urls.regular) }
+                val imageItems = safePosts.take(3).map { post -> ImageItem(post.base64) }
                 adapter.updateData(imageItems)
             }
         }
