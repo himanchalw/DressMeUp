@@ -34,6 +34,7 @@ class GetImages {
             }
         }
     }
+
     fun getUri():String{
         return url
     }
