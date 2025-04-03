@@ -13,7 +13,7 @@ class GetImages {
 //    private var url = "https://api.unsplash.com/photos/random?client_id=IANVB9vk2uncx9k9LyFBSFy_lsUo4NL3caMY7MFRZzQ&count="
     private var url = "https://localhost:8080?prompt="
 //
-    suspend fun fetchData(prompt:String): List<ImageResponse>? {
+    suspend fun fetchData(prompt:String?): List<ImageResponse>? {
         return withContext(Dispatchers.IO) {
             try {
 //                url+=imgNum.toString()

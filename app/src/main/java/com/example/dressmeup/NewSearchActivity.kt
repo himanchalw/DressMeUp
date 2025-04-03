@@ -105,7 +105,14 @@ class NewSearchActivity:AppCompatActivity() {
         val btnSearch=binding.btnSearch
         btnSearch.setOnClickListener{
             if(binding.edtSearch.text.toString().isNotBlank()) {
-                startActivity(Intent(this, SearchResultActivity::class.java))
+                val prompt=binding.edtSearch.text.toString()
+                val intent:Intent=Intent(this, SearchResultActivity::class.java).apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, prompt)
+                    type = "text/plain"
+                }
+
+                startActivity(intent)
             }else{
                 binding.edtStatus.text="Please enter text in search box😊"
             }

@@ -27,9 +27,11 @@ class SearchResultActivity:AppCompatActivity() {
         val adapter = ImageAdapter(mutableListOf())
         recyclerView.adapter = adapter
         lifecycleScope.launch {
-            val posts = GetImages().fetchData(3) // 🔹 Fetch data from API
+            val intent = intent
+            val receivedPrompt = intent.getStringExtra("prompt")
+            val posts = GetImages().fetchData(receivedPrompt) // 🔹 Fetch data from API
             posts?.let { safePosts ->  // 🔹 Use 'let' to ensure non-null value
-                val imageItems = safePosts.take(3).map { post -> ImageItem(post.base64) }
+                val imageItems = safePosts.take(3).map { post -> ImageItem(post.image_base64) }
                 adapter.updateData(imageItems)
             }
         }

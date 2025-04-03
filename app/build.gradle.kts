@@ -60,6 +60,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("com.google.android.material:material:1.12.0")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.22")
+    implementation ("org.jetbrains.kotlin:kotlin-parcelize-runtime:1.5.21")
 //    val room_version = "2.6.1"
 //
 //    implementation("androidx.room:room-runtime:$room_version")
