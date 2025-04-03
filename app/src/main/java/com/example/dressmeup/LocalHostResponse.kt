@@ -1,6 +1,10 @@
 package com.example.dressmeup
 
+data class ImageResponse(
+    val id: Int,
+    val image_base64: String
+)
+
 data class LocalHostResponse(
-    var id:String,
-    var base64:String
+    val images: List<ImageResponse>
 )
