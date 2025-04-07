@@ -84,11 +84,11 @@ class CartViewFragment: BottomSheetDialogFragment() {
 
     private fun loadCartItems() {
         cartItems = mutableListOf(
-            CartItem(1, "Helmet", 2499.99, "https://example.com/images/helmet.jpg"),
-            CartItem(2, "Riding Gloves", 999.50, "https://example.com/images/gloves.jpg"),
-            CartItem(3, "Bike Jacket", 4999.00, "https://example.com/images/jacket.jpg"),
-            CartItem(4, "Knee Guards", 1499.99, "https://example.com/images/knee_guards.jpg"),
-            CartItem(5, "Riding Boots", 3999.49, "https://example.com/images/boots.jpg"),
+            CartItem(1, "Shirt", 2499.99, "https://example.com/images/helmet.jpg"),
+            CartItem(2, "Trousers", 999.50, "https://example.com/images/gloves.jpg"),
+            CartItem(3, "Tie", 4999.00, "https://example.com/images/jacket.jpg"),
+            CartItem(4, "Loafer shoes", 1499.99, "https://example.com/images/knee_guards.jpg"),
+            CartItem(5, "Black Belt", 3999.49, "https://example.com/images/boots.jpg"),
             CartItem(6, "Motorcycle Cover", 799.99, "https://example.com/images/cover.jpg"),
             CartItem(7, "Phone Mount", 499.00, "https://example.com/images/phone_mount.jpg"),
             CartItem(8, "Tank Bag", 1999.99, "https://example.com/images/tank_bag.jpg"),

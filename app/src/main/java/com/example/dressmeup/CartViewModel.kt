@@ -11,7 +11,7 @@ class CartViewModel : ViewModel() {
     fun fetchImages() {
         if (_imageItems.value.isNullOrEmpty()) { // Fetch only if data is empty
             viewModelScope.launch {
-                val fetchedImages = GetImages().fetchData(10)?.map { post -> ImageItem(post.urls.regular) } ?: emptyList()
+                val fetchedImages = GetImages().fetchData("Office formals for men")?.map { post -> ImageItem(post.image_base64)} ?: emptyList()
                 _imageItems.postValue(fetchedImages) // Update LiveData
                 isDataFetched = true
             }
