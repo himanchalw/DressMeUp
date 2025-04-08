@@ -8,5 +8,6 @@ data class CartItem(
     val id: Int,
     val itemName: String,
     val itemPrice: Double,
-    var imageUrl: String
+    var imageUrl: String,
+    var isInCart: Boolean = false // NEW!
 ):Parcelable

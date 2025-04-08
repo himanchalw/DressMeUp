@@ -1,6 +1,7 @@
 package com.example.dressmeup
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -58,8 +59,9 @@ class CartViewFragment: BottomSheetDialogFragment() {
         val cartBtn:ImageButton=cartItemLayout.findViewById(R.id.cartButton)
         var inCart=false
         cartBtn.setOnClickListener {
+            Log.i("CartViewFragment", "Button Clicked")
             inCart=!inCart
-            it.setBackgroundResource(if (inCart) R.drawable.added_to_cart else R.drawable.cart_icon)
+            it.setBackgroundResource(if (inCart) R.drawable.added_to_cart else R.drawable.add_to_cart)
         }
     }
 
