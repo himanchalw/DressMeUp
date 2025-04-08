@@ -11,13 +11,14 @@ import okhttp3.*
 class GetImages {
     private val client = OkHttpClient()
 //    private var url = "https://api.unsplash.com/photos/random?client_id=IANVB9vk2uncx9k9LyFBSFy_lsUo4NL3caMY7MFRZzQ&count="
-    private var url = "https://localhost:8080?prompt="
+//    private var url = "http://localhost:8080/images"
+    private var url = "http://192.168.29.30:8080/images"
 //
     suspend fun fetchData(prompt:String?): List<ImageResponse>? {
         return withContext(Dispatchers.IO) {
             try {
 //                url+=imgNum.toString()
-                url+=prompt
+//                url+=prompt
                 val request = Request.Builder().url(url).get().build()
                 val response = client.newCall(request).execute()
 
