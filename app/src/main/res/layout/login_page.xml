@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/app_background"
     android:gravity="center_horizontal"
     android:paddingTop="150dp">
 
@@ -34,15 +35,15 @@
         android:layout_marginTop="100dp"
         android:singleLine="true"/>
 
-    <ImageButton
+    <Button
         android:contentDescription="Next Button"
         android:id="@+id/img_next_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:text="Sign In"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
         android:src="@drawable/next_button"
         android:layout_marginTop="75dp"
-        android:scaleType="fitCenter"
-        android:background="?attr/selectableItemBackgroundBorderless"/>
+        android:scaleType="fitCenter"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
