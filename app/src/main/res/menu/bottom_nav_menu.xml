@@ -13,7 +13,7 @@
         android:icon="@drawable/cart_icon"/>
     <item
         android:fontFamily="@font/montserrat_regular"
-        android:id="@+id/settings"
+        android:id="@+id/Refresh"
         android:title="Refresh"
         android:icon="@drawable/refresh_icon"/>
 </menu>
