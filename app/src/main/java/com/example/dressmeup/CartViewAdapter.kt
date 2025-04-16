@@ -24,7 +24,7 @@ class CartViewAdapter(private val cartList: MutableList<CartItem>): RecyclerView
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.bind(cartList[position])
+        holder.bind(cartList[position],position)
     }
 
     // Make ViewHolder 'inner' so it can access adapter variables
@@ -34,13 +34,17 @@ class CartViewAdapter(private val cartList: MutableList<CartItem>): RecyclerView
         val itemImage: ImageView = itemView.findViewById(R.id.itemImage)
         private val cartButton: ImageView = itemView.findViewById(R.id.cartButton)
 
-        fun bind(cartItem: CartItem) {
+        fun bind(cartItem: CartItem, position: Int) {
             itemName.text = cartItem.itemName
             itemPrice.text = cartItem.itemPrice.toString()
 
-            Glide.with(itemView.context)
-                .load(cartItem.imageUrl)
-                .into(itemImage)
+            when (position) {
+                0 -> itemImage.setImageResource(R.drawable.img1)
+                1 -> itemImage.setImageResource(R.drawable.img2)
+                2 -> itemImage.setImageResource(R.drawable.img3)
+                3 -> itemImage.setImageResource(R.drawable.img4)
+                4 -> itemImage.setImageResource(R.drawable.img5)
+            }
 
             // Set button based on state
             cartButton.setImageResource(

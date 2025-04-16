@@ -90,12 +90,7 @@ class CartViewFragment: BottomSheetDialogFragment() {
             CartItem(2, "Trousers", 999.50, "https://example.com/images/gloves.jpg"),
             CartItem(3, "Tie", 4999.00, "https://example.com/images/jacket.jpg"),
             CartItem(4, "Loafer shoes", 1499.99, "https://example.com/images/knee_guards.jpg"),
-            CartItem(5, "Black Belt", 3999.49, "https://example.com/images/boots.jpg"),
-            CartItem(6, "Motorcycle Cover", 799.99, "https://example.com/images/cover.jpg"),
-            CartItem(7, "Phone Mount", 499.00, "https://example.com/images/phone_mount.jpg"),
-            CartItem(8, "Tank Bag", 1999.99, "https://example.com/images/tank_bag.jpg"),
-            CartItem(9, "Chain Lubricant", 350.00, "https://example.com/images/chain_lube.jpg"),
-            CartItem(10, "LED Fog Lights", 2999.99, "https://example.com/images/fog_lights.jpg")
+            CartItem(5, "Black Belt", 3999.49, "https://example.com/images/boots.jpg")
         ) // Replace with actual data
 
 //        imageItems.let { urls ->
