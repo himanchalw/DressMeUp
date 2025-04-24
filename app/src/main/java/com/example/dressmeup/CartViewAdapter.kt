@@ -39,11 +39,11 @@ class CartViewAdapter(private val cartList: MutableList<CartItem>): RecyclerView
             itemPrice.text = cartItem.itemPrice.toString()
 
             when (position) {
-                0 -> itemImage.setImageResource(R.drawable.img1)
-                1 -> itemImage.setImageResource(R.drawable.img2)
-                2 -> itemImage.setImageResource(R.drawable.img3)
-                3 -> itemImage.setImageResource(R.drawable.img4)
-                4 -> itemImage.setImageResource(R.drawable.img5)
+                0 -> itemImage.setImageResource(R.drawable.img3)
+                1 -> itemImage.setImageResource(R.drawable.img5)
+                2 -> itemImage.setImageResource(R.drawable.img4)
+                3 -> itemImage.setImageResource(R.drawable.img2)
+                4 -> itemImage.setImageResource(R.drawable.img1)
             }
 
             // Set button based on state
