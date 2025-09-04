@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.dressmeup"
-    compileSdk = 34
+    compileSdk = 36
     viewBinding {
         this.enable = true
     }
@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId = "com.example.dressmeup"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -61,6 +61,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.22")
     implementation ("org.jetbrains.kotlin:kotlin-parcelize-runtime:1.5.21")
+    implementation ("androidx.appcompat:appcompat:1.7.0")
 //    val room_version = "2.6.1"
 //
 //    implementation("androidx.room:room-runtime:$room_version")

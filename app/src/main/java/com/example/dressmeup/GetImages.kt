@@ -1,5 +1,6 @@
 package com.example.dressmeup
 
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +13,7 @@ class GetImages {
     private val client = OkHttpClient()
 //    private var url = "https://api.unsplash.com/photos/random?client_id=IANVB9vk2uncx9k9LyFBSFy_lsUo4NL3caMY7MFRZzQ&count="
 //    private var url = "http://localhost:8080/images"
-    private var url = "http://192.168.29.30:8080/images"
+    private var url = "http://192.168.1.6:8080/images"
 //
     suspend fun fetchData(prompt:String?): List<ImageResponse>? {
         return withContext(Dispatchers.IO) {
@@ -28,6 +29,7 @@ class GetImages {
 //                val listType = object : TypeToken<List<Post>>() {}.type
                 val responseType = object : TypeToken<LocalHostResponse>() {}.type
                 val responseObject: LocalHostResponse = Gson().fromJson(jsonResponse, responseType)
+                Log.i("response",responseObject.toString())
                 return@withContext responseObject.images
             } catch (e: Exception) {
                 e.printStackTrace()

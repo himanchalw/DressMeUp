@@ -1,11 +1,9 @@
 package com.example.dressmeup
 
-import ImageAdapter
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
@@ -16,12 +14,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dressmeup.databinding.SearchPageBinding
 import kotlinx.coroutines.launch
 import java.util.Locale
+
+
 
 class NewSearchActivity:AppCompatActivity() {
     private lateinit var binding: SearchPageBinding
@@ -51,6 +52,7 @@ class NewSearchActivity:AppCompatActivity() {
         speechRecognizer.setRecognitionListener(object:RecognitionListener{
             override fun onReadyForSpeech(params: Bundle?) {
                 btnStartSpeech.setOnClickListener{
+                    editText.setText("")
                     btnStartSpeech.setBackgroundColor(R.drawable.mic_button_glow)
                 }
             }
@@ -106,9 +108,9 @@ class NewSearchActivity:AppCompatActivity() {
         btnSearch.setOnClickListener{
             if(binding.edtSearch.text.toString().isNotBlank()) {
                 val prompt=binding.edtSearch.text.toString()
-                val intent:Intent=Intent(this, SearchResultActivity::class.java)
-                intent.putExtra("prompt",prompt)
-                startActivity(intent)
+//                val intent= Intent(this@NewSearchActivity, SearchResultActivity::class.java)
+//                intent.putExtra("prompt",prompt)
+                startActivity(Intent(this@NewSearchActivity, SearchResultActivity::class.java))
             }else{
                 binding.edtStatus.text="Please enter text in search box😊"
             }

@@ -9,11 +9,11 @@
     <item
         android:fontFamily="@font/montserrat_regular"
         android:id="@+id/expand_view"
-        android:title="Choose look"
+        android:title="Wardrobe"
         android:icon="@drawable/cart_icon"/>
     <item
         android:fontFamily="@font/montserrat_regular"
         android:id="@+id/Refresh"
         android:title="Refresh"
-        android:icon="@drawable/refresh_icon"/>
+        android:icon="@drawable/wardrobe_icon"/>
 </menu>
